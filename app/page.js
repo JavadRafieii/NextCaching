@@ -1,6 +1,19 @@
+import { getPosts } from "@/lib/api";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+  // const response = await fetch("http://localhost:8080/posts", {
+  //   headers: {
+  //     'Test': 'Test_B',
+  //     'Content-Type': 'application/json',
+  //   },
+  // });
+
+  // const response = await fetch("http://localhost:8080/posts");
+  // const posts = await response.json();
+
+  const posts = await getPosts();
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
